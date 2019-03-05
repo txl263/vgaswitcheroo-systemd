@@ -3,6 +3,8 @@ Description=Discrete graphics off during boot
 
 [Service]
 Type=oneshot
+ExecStart=/bin/sh -c "echo ON > /sys/kernel/debug/vgaswitcheroo/switch"
+ExecStart=/bin/sh -c "echo IGD > /sys/kernel/debug/vgaswitcheroo/switch"
 ExecStart=/bin/sh -c "echo OFF > /sys/kernel/debug/vgaswitcheroo/switch"
 
 [Install]
